@@ -77,7 +77,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  background-color: rgb(255, 255, 255);
 }
+
+li{
+  list-style: none;
+}
+
 
 html,
 body {
@@ -104,4 +110,12 @@ a {
   html {
     color-scheme: dark;
   }
+}
+.movieLogo{
+  width:3rem;
+  height: 2rem;
+  border: 10px;
+  border-radius: 20px;
+  
+
 }
