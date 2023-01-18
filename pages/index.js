@@ -6,9 +6,9 @@ const SignInPage = () => {
   const context = useContext(AuthContext);
 
   return (
-    <>
+    <div>
       <Form />
-    </>
+    </div>
   );
 };
 

@@ -20,6 +20,9 @@
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.6"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
   }
 }
