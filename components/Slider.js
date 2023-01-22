@@ -6,7 +6,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const Slider = () => {
+import Image from "next/image";
+
+import Carousel from "./Layout/Carousel";
+
+const Slider = ({ trends }) => {
+  console.log(trends);
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, Virtual]}
@@ -19,23 +25,23 @@ const Slider = () => {
       onSlideChange={() => console.log("slide change")}
     >
       <SwiperSlide>
-        <div className="d-flex justify-content-center">
-          <h1 className="text-light">Slide 1</h1>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="d-flex justify-content-center">
-          <h1 className="text-light">Slide 1</h1>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="d-flex justify-content-center">
-          <h1 className="text-light">Slide 1</h1>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="d-flex justify-content-center">
-          <h1 className="text-light">Slide 1</h1>
+        <div className="container-fluid">
+          {trends.results.map((trend) => {
+            return (
+              <div className="row" key={trend.id}>
+                {/* <div className="d-flex justify-content-center">
+                  <Image
+                    src={trend.backdrop_path}
+                    alt=""
+                    width={400}
+                    height={400}
+                  />
+                  <h1 className="text-light">{trend.name}</h1>
+                </div> */}
+                <Carousel Image={trend.backdrop_path} />
+              </div>
+            );
+          })}
         </div>
       </SwiperSlide>
     </Swiper>

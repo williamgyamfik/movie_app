@@ -78,13 +78,10 @@ const Form = () => {
   return (
     <div className="text-light container h-100 pt-5">
       <div
-        className="row h-100 justify-content-center align-items-center"
+        className="row h-100 justify-content-center align-items-center "
         style={{ paddingTop: "9rem" }}
       >
-        <form
-          className="bg-dark pt-3 pb-5 w-25 opacity-100"
-          onSubmit={submitHandler}
-        >
+        <form className=" pt-3 pb-5 w-25 bg-dark " onSubmit={submitHandler}>
           <h2 className="text-center">{signIn ? "Sign in" : "Sign up"}</h2>
           <div className="row mb-3 justify-content-center">
             <div className="col-sm-10 pb-5 pt-5">

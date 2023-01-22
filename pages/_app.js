@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
 
 import { ContextProvider } from "../store/AuthContext";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
@@ -15,10 +15,8 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }

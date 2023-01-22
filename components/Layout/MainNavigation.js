@@ -1,11 +1,24 @@
 import Link from "next/link";
-import movieLogo from "../assets/movieLogo.png";
+import movieLogo from "../../assets/movieLogo.png";
 import Image from "next/image";
+import { useState } from "react";
 
-const NavBar = () => {
+import { useRouter } from "next/router";
+
+const MainNavigation = () => {
+  const router = useRouter();
+
+  const [logout, setLogout] = useState(false);
+  const logoutHandler = () => {
+    setLogout(true);
+    if (logout) {
+      router.push("/");
+    }
+  };
+
   return (
     <>
-      <nav className="navbar navbar-dark text-light navbar-expand-sm fixed-top">
+      <nav className="navbar navbar-dark text-light navbar-expand-sm fixed-top bg-opacity-25 fw-bold fs-5">
         <div className="container-fluid">
           <Link
             className="navbar-brand d-flex justify-content-center align-items-center "
@@ -27,7 +40,7 @@ const NavBar = () => {
 
           <div
             className="offcanvas offcanvas-end text-bg-dark"
-            tabindex="-1"
+            tabIndex="-1"
             id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel"
           >
@@ -61,8 +74,13 @@ const NavBar = () => {
             </div>
           </div>
 
-          <div className="me-4">
-            <button className="btn btn-danger btn-sm rounded-3">logout</button>
+          <div className="me-4 d-flex justify-content-center">
+            <button
+              className="btn btn-danger btn-sm rounded-3"
+              onClick={logoutHandler}
+            >
+              logout
+            </button>
           </div>
         </div>
       </nav>
@@ -70,4 +88,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default MainNavigation;
