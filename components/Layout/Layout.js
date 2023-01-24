@@ -7,7 +7,7 @@ const Layout = (props) => {
       <NavBar />
       {/* <main className="bg-dark">{props.children}</main> */}
       {props.children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

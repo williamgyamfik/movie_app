@@ -2,7 +2,7 @@ import Slider from "../../components/Slider";
 
 const Homepage = ({ trendingData }) => {
   return (
-    <div className="bg-warning">
+    <div className="">
       <Slider trends={trendingData} />
     </div>
   );

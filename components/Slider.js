@@ -1,22 +1,48 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, Virtual } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css/autoplay";
 
 import Image from "next/image";
+import movieBackDrop from "./movieBackDrop";
+import SlideCard from "./SlideCard";
 
-import Carousel from "./Layout/Carousel";
+const SlideItem = ({ item }) => {
+  const backDrop = movieBackDrop.originalImage(
+    item.backdrop_path ? item.backdrop_path : item.poster_path
+  );
+
+  return (
+    <div
+      className="container-fluid  opacity-75"
+      style={{ backgroundImage: `url(${backDrop})` }}
+    >
+      <div className="d-flex justify-content-end">
+        <Image
+          src={item.poster_path}
+          // {movieBackDrop.imageW500(item.poster_path)}
+          width={400}
+          height={800}
+        />
+        {/* <SlideCard src={item.poster_path} width={400} height={800} /> */}
+      </div>
+      <h1 className="fw-bold fs-1 text-center text-light">{item.name}</h1>
+    </div>
+  );
+};
 
 const Slider = ({ trends }) => {
   console.log(trends);
 
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, Virtual]}
-      spaceBetween={50}
+      modules={[Navigation, Pagination, Autoplay]}
+      loop={true}
+      autoplay={{ delay: 6000 }}
+      spaceBetween={5}
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
@@ -24,26 +50,15 @@ const Slider = ({ trends }) => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>
-        <div className="container-fluid">
-          {trends.results.map((trend) => {
-            return (
-              <div className="row" key={trend.id}>
-                {/* <div className="d-flex justify-content-center">
-                  <Image
-                    src={trend.backdrop_path}
-                    alt=""
-                    width={400}
-                    height={400}
-                  />
-                  <h1 className="text-light">{trend.name}</h1>
-                </div> */}
-                <Carousel Image={trend.backdrop_path} />
-              </div>
-            );
-          })}
-        </div>
-      </SwiperSlide>
+      {trends.results.map((item) => {
+        return (
+          <div>
+            <SwiperSlide key={item.id}>
+              <SlideItem item={item} />
+            </SwiperSlide>
+          </div>
+        );
+      })}
     </Swiper>
   );
 };
