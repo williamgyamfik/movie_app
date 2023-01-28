@@ -34,7 +34,7 @@ const SlideItem = ({ item }) => {
         position: "relative",
       }}
     >
-      <div className="d-block justify-content-end align-items-center  px-5">
+      <div className="container-fluid  ">
         <div className="d-flex justify-content-end align-items-center pt-5 ">
           <div className="card" style={{ width: "35rem" }}>
             <img
@@ -49,13 +49,15 @@ const SlideItem = ({ item }) => {
           {/* <SlideCard src={imageCard} title={title} /> */}
         </div>
 
-        <div className="text-center d-flex justify-content-start text-light w-50">
-          <div className="">
-            <h1 className="">{title}</h1>
-            <p className="fs-4">{item.overview}</p>
-            <div className="d-flex justify-content-space">
-              <button className="btn btn-light">Watch trailer</button>
-              <button className="btn btn-danger">Watch Now</button>
+        <div className="container-fluid text-center text-light">
+          <div className="row">
+            <div className="col-lg-6 col-md-12 col-sm-12 ">
+              <h1 className="fs-1 fw-bold">{title}</h1>
+              <p className="fs-4">{item.overview}</p>
+              <div className="d-flex justify-content-evenly mt-5">
+                <button className="btn btn-light fs-3">Watch trailer</button>
+                <button className="btn btn-danger fs-3">Watch Now</button>
+              </div>
             </div>
           </div>
         </div>
@@ -71,14 +73,12 @@ const Slider = ({ trends }) => {
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       loop={true}
-      autoplay={{ delay: 2000 }}
+      autoplay={{ delay: 7000 }}
       spaceBetween={5}
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
     >
       {trends.results.map((item) => {
         return (

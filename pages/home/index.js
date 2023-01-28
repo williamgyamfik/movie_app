@@ -1,9 +1,16 @@
+import MovieCard from "../../components/MovieCard";
 import Slider from "../../components/Slider";
+import { category, type } from "../../api/tmdbApi";
+import MovieList from "../../components/MovieList";
 
 const Homepage = ({ trendingData }) => {
   return (
     <div className="">
       <Slider trends={trendingData} />
+      <div>
+        <h1 className="text-warning">TRENDING TV AND MOVIES HERE</h1>
+        <MovieList category={category.movie} type={type.popular} />
+      </div>
     </div>
   );
 };
@@ -35,5 +42,6 @@ export async function getStaticProps() {
     props: {
       trendingData,
     },
+    revalidate: 3600,
   };
 }

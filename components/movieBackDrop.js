@@ -8,3 +8,5 @@ const movieBackDrop = {
 };
 
 export default movieBackDrop;
+
+//check the baseUrl
