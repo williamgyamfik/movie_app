@@ -19,7 +19,8 @@ const SlideItem = ({ item }) => {
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
 
-  const title = item.title ? item.title : item.original_title;
+  const title =
+    item.name || item.title || item.original_title || item.original_name;
 
   return (
     <div
@@ -46,7 +47,6 @@ const SlideItem = ({ item }) => {
               <h1 className="card-text fw-bold fs-3  ">{title}</h1>
             </div>
           </div>
-          {/* <SlideCard src={imageCard} title={title} /> */}
         </div>
 
         <div className="container-fluid text-center text-light">
@@ -80,13 +80,11 @@ const Slider = ({ trends }) => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
-      {trends.results.map((item) => {
+      {trends.results.map((item, i) => {
         return (
-          <div>
-            <SwiperSlide key={item.id}>
-              <SlideItem item={item} />
-            </SwiperSlide>
-          </div>
+          <SwiperSlide key={i}>
+            <SlideItem item={item} />
+          </SwiperSlide>
         );
       })}
     </Swiper>

@@ -1,8 +1,15 @@
+import { useContext } from "react";
+import { MovieListContext } from "../../store/MovieListContext";
+
 const Movies = () => {
+  const movieCtx = useContext(MovieListContext);
+
+  console.log(movieCtx);
   return (
-    <div>
+    <>
       <h1 className="bg-success">THIS IS A MOVIE PAGE</h1>
-    </div>
+      <button onClick={movieCtx.viewMore}>view more</button>
+    </>
   );
 };
 

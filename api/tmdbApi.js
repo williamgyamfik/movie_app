@@ -1,7 +1,5 @@
 import axiosTmdbApi from "./axiosTmdbApi";
 
-//creat movie and tv categories and types
-
 export const category = {
   movie: "movie",
   tv: "tv",

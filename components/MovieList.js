@@ -1,4 +1,4 @@
-import tmbdApi, { category } from "../api/tmdbApi";
+import tmbdApi from "../api/tmdbApi";
 import { useState, useEffect } from "react";
 
 import MovieCard from "./MovieCard";
@@ -28,8 +28,8 @@ const MovieList = (props) => {
 
   return (
     <div>
-      {movieList?.map((item) => {
-        return <MovieCard item={item} category={props.category} />;
+      {movieList?.map((item, i) => {
+        return <MovieCard key={i} item={item} />;
       })}
     </div>
   );
