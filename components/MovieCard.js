@@ -14,7 +14,7 @@ const MovieCard = ({ item }) => {
         <div className="card text-bg-dark " style={{ width: "18rem" }}>
           <img
             src={cardImage}
-            className="card-img image-fluid"
+            className="card-img image-fluid rounded-4 "
             alt="card image goes here"
           />
           <div className="card-img-overlay">
