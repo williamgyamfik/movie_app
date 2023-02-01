@@ -83,7 +83,7 @@ const Form = () => {
         onSubmit={submitHandler}
       >
         <h1
-          className="text-center fw-bold p-1"
+          className="text-center fw-bold p-3"
           style={{ fontSize: "3rem", color: "red" }}
         >
           Welcome to WatchFlix, {signIn ? "Sign in" : "Sign up"}

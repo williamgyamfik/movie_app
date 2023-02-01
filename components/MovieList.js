@@ -116,7 +116,7 @@ const MovieList = (props) => {
   const currentMovies = movieList.slice(startIndex, startIndex + columns);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid d-flex ">
       <div
         id="carouselExampleControls"
         className="carousel slide"
