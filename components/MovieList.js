@@ -35,7 +35,7 @@ const MovieList = (props) => {
     setPage(page - 1);
   };
 
-  const columns = 5;
+  const columns = 6;
   const totalPages = Math.ceil(movieList.length / columns);
   const startIndex = (page - 1) * columns;
   const currentMovies = movieList.slice(startIndex, startIndex + columns);

@@ -9,7 +9,7 @@ const MovieCard = ({ item }) => {
 
   return (
     // <div className="">
-    <div className="col-lg-2 col-md-6 col-sm-2  pb-5">
+    <div className="col-lg-2 col-md-4 col-sm-4 col-4 pb-5">
       <div className="justify-content-center d-flex">
         <div className="card text-bg-dark " style={{ width: "18rem" }}>
           <img
