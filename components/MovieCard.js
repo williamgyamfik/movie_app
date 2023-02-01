@@ -9,12 +9,16 @@ const MovieCard = ({ item }) => {
 
   return (
     // <div className="">
-    <div className="col-lg-3 col-md-6 col-sm-6 col-6 pb-5">
+    <div className="col-lg-2 col-md-6 col-sm-2  pb-5">
       <div className="justify-content-center d-flex">
         <div className="card text-bg-dark " style={{ width: "18rem" }}>
-          <img src={cardImage} className="card-img" alt="..." />
+          <img
+            src={cardImage}
+            className="card-img image-fluid"
+            alt="card image goes here"
+          />
           <div className="card-img-overlay">
-            <h5 className="card-title ">{title}</h5>
+            {/* <h5 className="card-title ">{title}</h5> */}
           </div>
         </div>
       </div>

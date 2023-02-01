@@ -8,22 +8,19 @@ const Homepage = ({ trendingData }) => {
     <>
       <Slider trends={trendingData} />
       <div>
-        <div className="">
-          <div className="d-flex justify-content-space">
-            <h1 className="text-light">Trending Movies</h1>
-          </div>
+        <div className="text-center">
+          <h1 className="text-light ">Trending Movies</h1>
           <MovieList category={category.movie} type={type.popular} />
         </div>
-        <div>
-          <h1 className="text-light">Top Rated Movies </h1>
+        <div className="text-center">
+          <h1 className="text-light text-center">Top Rated Movies </h1>
           <MovieList category={category.movie} type={type.top_rated} />
         </div>
-        <div>
+        <div className="text-center">
           <h1 className="text-light">Trending TV </h1>
           <MovieList category={category.tv} type={type.popular} />
         </div>
-
-        <div>
+        <div className="text-center">
           <h1 className="text-light"> Top Rated TV </h1>
           <MovieList category={category.tv} type={type.top_rated} />
         </div>
