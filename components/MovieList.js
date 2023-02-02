@@ -18,6 +18,9 @@ const MovieList = (props) => {
         } else {
           response = await tmbdApi.getMovielist(props.type, { params });
         }
+
+        // const UpdateDMovieList = [...response.data.results, movieList];
+
         setMovieList(response.data.results);
         console.log(response.data.results);
       } catch (error) {
@@ -51,7 +54,7 @@ const MovieList = (props) => {
           <div className="carousel-item active">
             <div className="row justify-content-center ">
               {currentMovies.map((item, i) => {
-                return <MovieCard key={i} item={item} />;
+                return <MovieCard key={item.id} item={item} />;
               })}
             </div>
           </div>

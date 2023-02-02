@@ -61,7 +61,7 @@ const MainNavigation = () => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" href="/tv">
-                    Tv Series
+                    Tv Shows
                   </Link>
                 </li>
 

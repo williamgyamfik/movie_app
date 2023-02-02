@@ -23,9 +23,10 @@ const SlideItem = ({ item }) => {
   return (
     <div className="container-fluid  opacity-75 mb-5 ">
       <div
-        className="row  w-100 h-100 d-flex align-items-center p-5"
+        className="row  w-100  d-flex align-items-center p-5"
         style={{
           backgroundImage: `url(${backDrop})`,
+          height: "18rem",
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -45,26 +46,24 @@ const SlideItem = ({ item }) => {
             </div>
           </div> */}
 
-        <div className="container-fluid text-center text-light mb-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-12 col-sm-6 col-12 ">
-              <div className="row">
-                <h1 className=" fw-bold fs-1 text-center mb-3 mb-sm-0 mx-auto">
-                  {title}
-                </h1>
-                <p className="fs-4 text-center mx-auto">{item.overview}</p>
-              </div>
-              <div className="d-flex justify-content-evenly  mt-5 ">
-                <button className="btn btn-light fw-bold fs-3 ">
-                  Watch trailer
-                </button>
-                <button className="btn btn-danger fw-bold fs-3">
-                  Watch Now
-                </button>
-              </div>
+        {/* <div className="container-fluid text-center text-light mb-5"> */}
+        <div className="row justify-content-center">
+          <div className="col-lg-6 col-md-12 col-sm-6 col-12 ">
+            <div className="row text-center text-light">
+              <h1 className=" fw-bold fs-1 text-center mb-3 mb-sm-0 mx-auto">
+                {title}
+              </h1>
+              <p className="fs-4 text-center mx-auto">{item.overview}</p>
+            </div>
+            <div className="d-flex justify-content-evenly  mt-5 ">
+              <button className="btn btn-light fw-bold fs-3 ">
+                Watch trailer
+              </button>
+              <button className="btn btn-danger fw-bold fs-3">Watch Now</button>
             </div>
           </div>
         </div>
+        {/* </div> */}
         {/* </div> */}
       </div>
     </div>
