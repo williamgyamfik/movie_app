@@ -69,7 +69,7 @@ const Form = () => {
 
         contxt.login(data.idToken, expirationTime.toISOString());
 
-        router.push("/home");
+        router.replace("/home");
       })
       .catch((error) => {
         alert(error.message);

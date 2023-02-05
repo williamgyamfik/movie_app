@@ -18,7 +18,7 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="navbar navbar-dark text-light navbar-expand-sm fixed-top  bg-opacity-75 fw-bold fs-5">
+      <nav className="navbar navbar-dark text-light navbar-expand-sm navbar-expand-md navbar-expand-lg fixed-top  bg-opacity-75 fw-bold fs-5">
         <div className="container-fluid">
           <Link
             className="navbar-brand d-flex justify-content-center align-items-center "

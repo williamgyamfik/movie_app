@@ -1,6 +1,6 @@
 import tmdbApi from "../../api/tmdbApi";
 import { type } from "../../api/tmdbApi";
-import TvshowsList from "../../components/TvShowsList";
+import AllTvshowsList from "../../components/AllTvShowsList";
 
 const TvShows = ({ tvLists }) => {
   return (
@@ -8,7 +8,7 @@ const TvShows = ({ tvLists }) => {
       <h1 className="text-center text-light pt-5">Tv Shows</h1>
       <div className="row mt-5 p-3 ">
         {tvLists?.map((tvList) => {
-          return <TvshowsList key={tvList.id} tvList={tvList} />;
+          return <AllTvshowsList key={tvList.id} tvList={tvList} />;
         })}
       </div>
       <div className="d-flex justify-content-center mt-5">

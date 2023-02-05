@@ -1,4 +1,5 @@
 import axiosTmdbApi from "./axiosTmdbApi";
+import { api_key } from "./axiosTmdbApi";
 
 export const category = {
   movie: "movie",
@@ -17,6 +18,14 @@ const tmdbApi = {
   },
   getMovielist: (movieType, params) => {
     const url = "movie/" + type[movieType];
+    return axiosTmdbApi.get(url, params);
+  },
+  getMovieDetails: (cat, id) => {
+    const url = category[cat] + "/" + id + "?api_key=" + api_key;
+    return axiosTmdbApi.get(url);
+  },
+  getTvDetails: (cat, id) => {
+    const url = category[cat] + "/" + id + "?api_key=" + api_key;
     return axiosTmdbApi.get(url, params);
   },
 };

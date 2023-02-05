@@ -71,8 +71,6 @@ const SlideItem = ({ item }) => {
 };
 
 const Slider = ({ trends }) => {
-  console.log(trends);
-
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}

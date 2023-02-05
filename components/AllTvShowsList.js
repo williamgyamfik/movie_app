@@ -1,13 +1,13 @@
 import movieBackDrop from "./movieBackDrop";
 import Link from "next/link";
 
-const MovieListDetails = ({ movieList }) => {
+const AllTvshowsList = ({ tvList }) => {
   const cardImage = movieBackDrop.imageW300(
-    movieList.poster_path ? movieList.poster_path : movieList.backdrop_path
+    tvList.poster_path ? tvList.poster_path : tvList.backdrop_path
   );
 
   return (
-    <div className=" col-lg-3 col-md-4 col-sm-4 col-4">
+    <div className=" col-lg-3 col-md-4 col-sm-4 col-6">
       <div className="d-flex justify-content-center ">
         <div className="card text-bg-dark " style={{ width: "18rem" }}>
           <Link href="">
@@ -24,4 +24,4 @@ const MovieListDetails = ({ movieList }) => {
   );
 };
 
-export default MovieListDetails;
+export default AllTvshowsList;

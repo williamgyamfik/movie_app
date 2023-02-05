@@ -22,7 +22,6 @@ const MovieList = (props) => {
         // const UpdateDMovieList = [...response.data.results, movieList];
 
         setMovieList(response.data.results);
-        console.log(response.data.results);
       } catch (error) {
         console.log(error);
       }
@@ -32,14 +31,17 @@ const MovieList = (props) => {
 
   const handleNextPage = () => {
     setPage(page + 1);
+    console.log("next Page is " + page);
   };
 
   const handlePreviousPage = () => {
     setPage(page - 1);
+    console.log(" Previous Page is " + page);
   };
 
   const columns = 6;
   const totalPages = Math.ceil(movieList.length / columns);
+  console.log("total page is " + totalPages);
   const startIndex = (page - 1) * columns;
   const currentMovies = movieList.slice(startIndex, startIndex + columns);
 
