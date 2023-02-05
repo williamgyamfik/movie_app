@@ -1,8 +1,7 @@
 import { useState } from "react";
 import tmdbApi from "../../api/tmdbApi";
 import { type } from "../../api/tmdbApi";
-
-import AllMovieList from "../../components/allMovieList";
+import AllMovieList from "../../components/AllMovieList";
 
 const Movies = ({ movieLists }) => {
   const [movies, setMovies] = useState(movieLists);
