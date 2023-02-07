@@ -28,6 +28,14 @@ const tmdbApi = {
     const url = category[cat] + "/" + id + "?api_key=" + api_key;
     return axiosTmdbApi.get(url, params);
   },
+  getCastList: (cat, id) => {
+    const url = category[cat] + "/" + id + "/credits?" + "api_key=" + api_key;
+    return axiosTmdbApi.get(url);
+  },
+  getGallery: (cat, id) => {
+    const url = category[cat] + "/" + id + "/images?" + "api_key=" + api_key;
+    return axiosTmdbApi.get(url);
+  },
 };
 
 export default tmdbApi;

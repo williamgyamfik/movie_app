@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import CardDetails from "../../components/CardDetails";
+import MovieDetails from "../../components/MovieDetails";
 
 const MovieDetail = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const MovieDetail = () => {
 
   return (
     <>
-      <CardDetails movieId={movieId} />
+      <MovieDetails movieId={movieId} />
     </>
   );
 };

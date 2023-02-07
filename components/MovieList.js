@@ -31,12 +31,10 @@ const MovieList = (props) => {
 
   const handleNextPage = () => {
     setPage(page + 1);
-    console.log("next Page is " + page);
   };
 
   const handlePreviousPage = () => {
     setPage(page - 1);
-    console.log(" Previous Page is " + page);
   };
 
   const columns = 6;

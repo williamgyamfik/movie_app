@@ -23,12 +23,13 @@ const SlideItem = ({ item }) => {
   return (
     <div className="container-fluid  opacity-75 mb-5 ">
       <div
-        className="row  w-100  d-flex align-items-center p-5"
+        className="row  d-flex align-items-center "
         style={{
           backgroundImage: `url(${backDrop})`,
-          height: "18rem",
+          minHeight: "30vh",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           position: "relative",
         }}
       >
@@ -56,10 +57,10 @@ const SlideItem = ({ item }) => {
               <p className="fs-4 text-center mx-auto">{item.overview}</p>
             </div>
             <div className="d-flex justify-content-evenly  mt-5 ">
-              <button className="btn btn-light fw-bold fs-3 ">
+              {/* <button className="btn btn-light fw-bold fs-3 ">
                 Watch trailer
               </button>
-              <button className="btn btn-danger fw-bold fs-3">Watch Now</button>
+              <button className="btn btn-danger fw-bold fs-3">Watch Now</button> */}
             </div>
           </div>
         </div>
