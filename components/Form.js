@@ -2,8 +2,6 @@ import { useState, useRef, useContext } from "react";
 import AuthContext from "../store/AuthContext";
 import { useRouter } from "next/router";
 
-import movieBackDrop from "./movieBackDrop";
-
 const Form = () => {
   const router = useRouter();
 

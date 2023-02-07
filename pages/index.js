@@ -1,6 +1,6 @@
 import Form from "../components/Form";
 import AuthContext from "../store/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const SignInPage = () => {
   const context = useContext(AuthContext);
