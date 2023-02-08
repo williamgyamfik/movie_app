@@ -2,6 +2,7 @@ import MovieCard from "../../components/MovieCard";
 import Slider from "../../components/Slider";
 import { category, type } from "../../api/tmdbApi";
 import MovieList from "../../components/MovieList";
+import TvList from "../../components/TvList";
 
 const Homepage = ({ trendingData }) => {
   return (
@@ -18,11 +19,11 @@ const Homepage = ({ trendingData }) => {
         </div>
         <div className="text-center">
           <h1 className="text-light">Trending TV </h1>
-          <MovieList category={category.tv} type={type.popular} />
+          <TvList category={category.tv} type={type.popular} />
         </div>
         <div className="text-center">
           <h1 className="text-light"> Top Rated TV </h1>
-          <MovieList category={category.tv} type={type.top_rated} />
+          <TvList category={category.tv} type={type.top_rated} />
         </div>
       </div>
     </>
@@ -32,8 +33,6 @@ const Homepage = ({ trendingData }) => {
 export default Homepage;
 
 export async function getStaticProps() {
-  // runs during build time, doesnt get to client
-
   const apiKey = "2563582b1f5a10c6a86c15ea975da109";
 
   const res = await fetch(

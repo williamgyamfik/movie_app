@@ -15,7 +15,7 @@ const CastList = (props) => {
           category.movie,
           props.movieId
         );
-        console.log(response.data);
+
         setCasts(response.data.cast.slice(0, 5));
       } catch (error) {
         console.log(error.message);
@@ -26,7 +26,7 @@ const CastList = (props) => {
   }, [category.movie, props.movieId]);
   return (
     <div className="container">
-      <h1 className="fw-bold text-white p-2">Casts</h1>
+      <h1 className="fw-bold text-white ">Casts</h1>
       <div className="row align-items-center p-3">
         {casts?.map((cast) => {
           const cardImage = movieBackDrop.imageW300(

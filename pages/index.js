@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 
 const SignInPage = () => {
   const context = useContext(AuthContext);
-
+  s;
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);

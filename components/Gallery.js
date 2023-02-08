@@ -6,8 +6,6 @@ import movieBackDrop from "./movieBackDrop";
 const Gallery = (props) => {
   const [galleries, setGalleries] = useState([]);
 
-  console.log(galleries);
-
   useEffect(() => {
     const getGallery = async () => {
       try {

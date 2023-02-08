@@ -1,5 +1,6 @@
 import movieBackDrop from "./movieBackDrop";
 import Link from "next/link";
+import { category } from "../api/tmdbApi";
 
 const MovieCard = ({ item }) => {
   // const title = item.title || item.name || item.original_name;
@@ -12,7 +13,9 @@ const MovieCard = ({ item }) => {
 
   return (
     <div className="col-lg-2 col-md-4 col-sm-4 col-4 pb-5">
-      <Link href={"/movies/" + movieId}>
+      <Link
+        href={`/${category.type === "movies" ? "movies" : "tv"}/${movieId}`}
+      >
         <div className="justify-content-center d-flex">
           <div className="card text-bg-dark " style={{ width: "18rem" }}>
             <img

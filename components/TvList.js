@@ -1,26 +1,27 @@
-import tmbdApi from "../api/tmdbApi";
+import tmbdApi, { category } from "../api/tmdbApi";
 import { useState, useEffect } from "react";
 
 import MovieCard from "./MovieCard";
 
-const MovieList = (props) => {
-  const [movieList, setMovieList] = useState([]);
+const TvList = (props) => {
+  const [tvList, setTvList] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const getList = async () => {
+    const getTvList = async () => {
       let params = { page };
       let response;
 
       try {
-        response = await tmbdApi.getMovielist(props.type, { params });
-        setMovieList(response.data.results);
+        response = await tmbdApi.getTvList(props.type, { params });
+
+        setTvList(response.data.results);
       } catch (error) {
         console.log(error);
       }
     };
-    getList();
-  }, [props.category, props.type, page]);
+    getTvList();
+  }, [props.type, props.type, page]);
 
   const handleNextPage = () => {
     setPage(page + 1);
@@ -31,10 +32,10 @@ const MovieList = (props) => {
   };
 
   const columns = 6;
-  const totalPages = Math.ceil(movieList.length / columns);
+  const totalPages = Math.ceil(tvList.length / columns);
 
   const startIndex = (page - 1) * columns;
-  const currentMovies = movieList.slice(startIndex, startIndex + columns);
+  const currentMovies = tvList.slice(startIndex, startIndex + columns);
 
   return (
     <div className="container-fluid d-flex justify-content-center p-5">
@@ -83,4 +84,4 @@ const MovieList = (props) => {
   );
 };
 
-export default MovieList;
+export default TvList;

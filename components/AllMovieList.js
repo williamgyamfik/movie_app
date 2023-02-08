@@ -17,7 +17,6 @@ const AllMovieList = ({ movieList }) => {
               className="card-img image-fluid rounded-4 "
               alt="card image goes here"
             />
-            <div className="card-img-overlay">title here</div>
           </div>
         </div>
       </div>

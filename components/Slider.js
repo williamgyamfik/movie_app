@@ -17,55 +17,40 @@ const SlideItem = ({ item }) => {
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
 
-  const title =
-    item.name || item.title || item.original_title || item.original_name;
+  // const title =
+  //   item.name || item.title || item.original_title || item.original_name;
 
   return (
-    <div className="container-fluid  opacity-75 mb-5 ">
-      <div
-        className="row  d-flex align-items-center "
-        style={{
-          backgroundImage: `url(${backDrop})`,
-          minHeight: "30vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          position: "relative",
-        }}
-      >
-        {/* <div className="container-fluid  "> */}
-        {/* <div className="d-flex justify-content-end align-items-center pt-5 ">
-            <div className="card" style={{ width: "35rem" }}>
+    <div
+      className="container-fluid "
+      style={{
+        backgroundImage: `url(${backDrop})`,
+        minHeight: "30vh",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+      }}
+    >
+      <div className="row justify-content-between align-items-center mt-5 p-5">
+        <div className=" col-lg-5 col-md-6 col-12 mt-5">
+          <div className=" mt-2 w-100 text-center d-flex flex-column align-items-center justify-content-center">
+            <h1 className="mb-3 text-white fw-bold fs-3">{item.title}</h1>
+            <p className=" text-white">{item.overview}</p>
+          </div>
+        </div>
+        <div className=" col-lg-3 col-md-5 col-12">
+          <div className="d-flex justify-content-center">
+            <div className="card text-bg-dark " style={{ width: "25rem" }}>
               <img
-                className="img-fluid shadow-lg opacity-100"
                 src={imageCard}
-                alt="image goes here"
+                className="card-img  rounded-4 "
+                alt="card image goes here"
               />
-              <div className="card-body text-center  pt-3">
-                <h1 className="card-text fw-bold fs-1  ">{title}</h1>
-              </div>
-            </div>
-          </div> */}
-
-        {/* <div className="container-fluid text-center text-light mb-5"> */}
-        <div className="row justify-content-center">
-          <div className="col-lg-6 col-md-12 col-sm-6 col-12 ">
-            <div className="row text-center text-light">
-              <h1 className=" fw-bold fs-1 text-center mb-3 mb-sm-0 mx-auto">
-                {title}
-              </h1>
-              <p className="fs-4 text-center mx-auto">{item.overview}</p>
-            </div>
-            <div className="d-flex justify-content-evenly  mt-5 ">
-              {/* <button className="btn btn-light fw-bold fs-3 ">
-                Watch trailer
-              </button>
-              <button className="btn btn-danger fw-bold fs-3">Watch Now</button> */}
+              <div className="card-img-overlay"></div>
             </div>
           </div>
         </div>
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   );
