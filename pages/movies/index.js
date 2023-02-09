@@ -13,7 +13,7 @@ const Movies = ({ movieLists }) => {
 
     try {
       response = await tmdbApi.getMovielist(type.popular, { params });
-      console.log(response);
+
       setMovies([...movies, ...response.data.results]);
 
       setPage((previousPage) => previousPage + 1);

@@ -49,8 +49,6 @@ export async function getStaticProps() {
   }
   const trendingData = await res.json();
 
-  console.log(trendingData);
-
   return {
     props: {
       trendingData,

@@ -1,9 +1,9 @@
 import movieBackDrop from "./movieBackDrop";
 import Link from "next/link";
 
-const AllTvshowsList = ({ tvList }) => {
+const AllTvshowsList = ({ tvs }) => {
   const cardImage = movieBackDrop.imageW300(
-    tvList.poster_path ? tvList.poster_path : tvList.backdrop_path
+    tvs.poster_path ? tvs.poster_path : tvs.backdrop_path
   );
 
   return (

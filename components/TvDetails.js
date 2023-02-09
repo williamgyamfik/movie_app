@@ -16,54 +16,59 @@ const TvDetails = (props) => {
     detail.backdrop_path ? detail.backdrop_path : detail.poster_path
   );
 
+  console.log(detail);
+
   useEffect(() => {
-    const movieDetail = async () => {
+    const tvDetail = async () => {
       try {
-        const response = await tmdbApi.getMovieDetails(
-          category.tv,
-          props.movieId
-        );
-        setDetail(response.data);
+        const response = await tmdbApi.getTvDetails(category.tv, props.tvId);
+
+        console.log(response.data.results);
+
+        setDetail(response.data.results);
       } catch (error) {
         console.log(error.message);
       }
     };
-    movieDetail();
-  }, [category.tv, props.movieId]);
+    tvDetail();
+  }, [category.tv, props.tvId]);
 
   return (
-    <div
-      className="container-fluid opacity-50"
-      style={{
-        backgroundImage: `url(${backDrop})`,
-        minHeight: "60vh",
-        position: "relative",
-        backgroundSize: "cover",
-        backgroundPosition: "50%",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Link href="/home">
-        <FontAwesomeIcon
-          className="bg-light border-3 rounded-4 mt-3"
-          size="2x"
-          icon={faLeftLong}
-        ></FontAwesomeIcon>
-      </Link>
-      <div className="container d-flex pt-5 justify-content-start align-items-center">
-        <div className="">
-          <img
-            className="card-img-top mx-3  rounded-2"
-            src={cardImage}
-            alt=""
-          />
-        </div>
-        <div className="">
-          <h1 className="text-light fw-bold">{detail.title}</h1>
-          <p className="text-light fw-normal">{detail.overview}</p>
+    <>
+      {" "}
+      <div
+        className="container-fluid opacity-50"
+        style={{
+          backgroundImage: `url(${backDrop})`,
+          minHeight: "60vh",
+          position: "relative",
+          backgroundSize: "cover",
+          backgroundPosition: "50%",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Link href="/home">
+          <FontAwesomeIcon
+            className="bg-light border-3 rounded-4 mt-3"
+            size="2x"
+            icon={faLeftLong}
+          ></FontAwesomeIcon>
+        </Link>
+        <div className="container d-flex pt-5 justify-content-start align-items-center">
+          <div className="">
+            <img
+              className="card-img-top mx-3  rounded-2"
+              src={cardImage}
+              alt=""
+            />
+          </div>
+          <div className="">
+            <h1 className="text-light fw-bold">{detail.title}</h1>
+            <p className="text-light fw-normal">{detail.overview}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
