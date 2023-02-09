@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import movieBackDrop from "./movieBackDrop";
-import { tmdbApi, category } from "../api/tmdbApi";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
+
+import { category } from "../api/tmdbApi";
+import tmdbApi from "../api/tmdbApi";
 
 const TvDetails = (props) => {
   const [detail, setDetail] = useState({});
