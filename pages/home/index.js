@@ -1,4 +1,3 @@
-import MovieCard from "../../components/MovieCard";
 import Slider from "../../components/Slider";
 import { category, type } from "../../api/tmdbApi";
 import MovieList from "../../components/MovieList";
