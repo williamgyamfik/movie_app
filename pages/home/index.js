@@ -7,7 +7,7 @@ const Homepage = ({ trendingData }) => {
   return (
     <>
       <Slider trends={trendingData} />
-      <div>
+      <div className="mt-5">
         <div className="text-center">
           <h1 className="text-light ">Trending Movies</h1>
           <MovieList category={category.movie} type={type.popular} />

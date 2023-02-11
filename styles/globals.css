@@ -36,9 +36,4 @@ a {
   border-radius: 20px;
 }
 
-@media (max-width: 767px){
-  .card{
-    display: none;
-  }
-}
 

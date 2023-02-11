@@ -9,11 +9,16 @@ import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 import CastList from "./CastList";
 import Gallery from "./Gallery";
 
-const MovieDetails = (props) => {
-  const [detail, setDetail] = useState({});
+import { useRouter } from "next/router";
 
-  // pass the props.id to castList,Images component so they can use it to make API calls for
-  // data accordingly
+const Details = (props) => {
+  const router = useRouter();
+
+  const cat = router.query.category;
+
+  console.log("cat", cat);
+
+  const [detail, setDetail] = useState({});
 
   const cardImage = movieBackDrop.imageW300(
     detail.poster_path ? detail.poster_path : detail.backdrop_path
@@ -23,28 +28,27 @@ const MovieDetails = (props) => {
     detail.backdrop_path ? detail.backdrop_path : detail.poster_path
   );
 
+  console.log(props.cat);
+
   useEffect(() => {
     const movieDetail = async () => {
       try {
-        const response = await tmdbApi.getMovieDetails(
-          category.movie,
-          props.movieId
-        );
+        const response = await tmdbApi.getDetails(cat, props.id);
         setDetail(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
     movieDetail();
-  }, [category.movie, props.movieId]);
+  }, [cat, props.id]);
 
   return (
     <>
       <div
-        className="container-fluid opacity-50"
+        className="container-fluid "
         style={{
           backgroundImage: `url(${backDrop})`,
-          minHeight: "60vh",
+          // minHeight: "60vh",
           position: "relative",
           backgroundSize: "cover",
           backgroundPosition: "50%",
@@ -72,10 +76,10 @@ const MovieDetails = (props) => {
           </div>
         </div>
       </div>
-      <CastList movieId={props.movieId} />
-      <Gallery movieId={props.movieId} />
+      <CastList cat={cat} id={props.id} />
+      <Gallery cat={cat} id={props.id} />
     </>
   );
 };
 
-export default MovieDetails;
+export default Details;

@@ -20,11 +20,8 @@ const tmdbApi = {
     const url = "movie/" + type[movieType];
     return axiosTmdbApi.get(url, params);
   },
-  getMovieDetails: (cat, id) => {
-    const url = category[cat] + "/" + id + "?api_key=" + api_key;
-    return axiosTmdbApi.get(url);
-  },
-  getTvDetails: (cat, id) => {
+
+  getDetails: (cat, id) => {
     const url = category[cat] + "/" + id + "?api_key=" + api_key;
     return axiosTmdbApi.get(url);
   },

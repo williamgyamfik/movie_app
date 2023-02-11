@@ -17,29 +17,30 @@ const SlideItem = ({ item }) => {
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
 
-  // const title =
-  //   item.name || item.title || item.original_title || item.original_name;
+  const title =
+    item.name || item.title || item.original_title || item.original_name;
 
   return (
     <div
       className="container-fluid "
       style={{
         backgroundImage: `url(${backDrop})`,
-        minHeight: "30vh",
+        height: "400px",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         position: "relative",
+        objectFit: "fill",
       }}
     >
-      <div className="row justify-content-between align-items-center mt-5 p-5">
-        <div className=" col-lg-5 col-md-6 col-12 mt-5">
-          <div className=" mt-2 w-100 text-center d-flex flex-column align-items-center justify-content-center">
-            <h1 className="mb-3 text-white fw-bold fs-3">{item.title}</h1>
+      <div className="row  justify-content-center align-items-center mt-5 p-5">
+        <div className=" col-lg-12 col-md-11 col-sm-12 col-12 mt-5">
+          <div className=" mt-2 text-center d-flex flex-column align-items-center justify-content-center">
+            <h1 className="mb-3 text-white fw-bold fs-3">{title}</h1>
             <p className=" text-white">{item.overview}</p>
           </div>
         </div>
-        <div className=" col-lg-3 col-md-5 col-12">
+        {/* <div className=" col-lg-3 col-md-5 col-12">
           <div className="d-flex justify-content-center">
             <div className="card text-bg-dark " style={{ width: "25rem" }}>
               <img
@@ -50,7 +51,7 @@ const SlideItem = ({ item }) => {
               <div className="card-img-overlay"></div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
-import MovieDetails from "../../components/MovieDetails";
+import Details from "../../components/Details";
 
-const MovieCardDetail = (props) => {
+const CardDetail = () => {
   const router = useRouter();
-  const { movieId } = router.query;
+  const id = router.query.movieId;
 
   return (
     <>
-      <MovieDetails movieId={movieId} />
+      <Details id={id} />
     </>
   );
 };
 
-export default MovieCardDetail;
+export default CardDetail;

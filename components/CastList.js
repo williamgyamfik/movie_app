@@ -5,16 +5,18 @@ import movieBackDrop from "./movieBackDrop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 
+import { useRouter } from "next/router";
+
 const CastList = (props) => {
   const [casts, setCasts] = useState([]);
+
+  const router = useRouter();
+  console.log(router);
 
   useEffect(() => {
     const castList = async () => {
       try {
-        const response = await tmdbApi.getCastList(
-          category.movie,
-          props.movieId
-        );
+        const response = await tmdbApi.getCastList(props.cat, props.id);
 
         setCasts(response.data.cast.slice(0, 5));
       } catch (error) {
@@ -23,7 +25,7 @@ const CastList = (props) => {
     };
 
     castList();
-  }, [category.movie, props.movieId]);
+  }, [props.cat, props.id]);
   return (
     <div className="container">
       <h1 className="fw-bold text-white ">Casts</h1>

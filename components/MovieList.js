@@ -47,7 +47,7 @@ const MovieList = (props) => {
           <div className="carousel-item active">
             <div className="row justify-content-center ">
               {currentMovies.map((item) => {
-                const href = `/movies/${item.id}`;
+                const href = `/movies/${item.id}?category=movie`;
                 return <MovieCard key={item.id} item={item} href={href} />;
               })}
             </div>

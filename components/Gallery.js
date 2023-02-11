@@ -9,17 +9,14 @@ const Gallery = (props) => {
   useEffect(() => {
     const getGallery = async () => {
       try {
-        const response = await tmdbApi.getGallery(
-          category.movie,
-          props.movieId
-        );
+        const response = await tmdbApi.getGallery(props.cat, props.id);
         setGalleries(response.data.backdrops);
       } catch (error) {
         console.log(error);
       }
     };
     getGallery();
-  }, [category.movie, props.movieId]);
+  }, [props.cat, props.id]);
 
   return (
     <div className="container">

@@ -1,14 +1,17 @@
 import { useRouter } from "next/router";
-import TvDetails from "../../components/TvDetails";
+import { category } from "../../api/tmdbApi";
+import Details from "../../components/Details";
 
 const TvCardDetail = () => {
   const router = useRouter();
+
+  const id = router.query.tvId;
+
   console.log(router);
-  const { tvId } = router.query;
 
   return (
     <div>
-      <TvDetails tvId={tvId} />
+      <Details id={id} cat={category} />
     </div>
   );
 };
