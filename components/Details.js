@@ -1,22 +1,20 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-import tmdbApi, { category } from "../api/tmdbApi";
+import tmdbApi from "../api/tmdbApi";
 import movieBackDrop from "./movieBackDrop";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 import CastList from "./CastList";
 import Gallery from "./Gallery";
 
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Details = (props) => {
   const router = useRouter();
 
   const cat = router.query.category;
-
-  console.log("cat", cat);
 
   const [detail, setDetail] = useState({});
 
@@ -28,7 +26,11 @@ const Details = (props) => {
     detail.backdrop_path ? detail.backdrop_path : detail.poster_path
   );
 
-  console.log(props.cat);
+  const title = detail.title || detail.name || detail.original_name;
+
+  const detailOverview = detail.overview
+    ? detail.overview
+    : "Overview not available";
 
   useEffect(() => {
     const movieDetail = async () => {
@@ -44,35 +46,41 @@ const Details = (props) => {
 
   return (
     <>
+      <div className="d-flex justify-content-start p-2 ">
+        <Link href={"/home"}>
+          <button className="btn btn-success btn-sm">
+            <FontAwesomeIcon icon={faChevronLeft}>Back</FontAwesomeIcon>
+          </button>
+        </Link>
+      </div>
       <div
-        className="container-fluid "
+        className="container-fluid container_height"
         style={{
           backgroundImage: `url(${backDrop})`,
-          // minHeight: "60vh",
+          height: "auto",
           position: "relative",
           backgroundSize: "cover",
           backgroundPosition: "50%",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Link href="/home">
-          <FontAwesomeIcon
-            className="bg-light border-3 rounded-4 mt-3"
-            size="2x"
-            icon={faLeftLong}
-          ></FontAwesomeIcon>
-        </Link>
-        <div className="container d-flex pt-5 justify-content-start align-items-center">
-          <div className="">
+        <div className="row align-items-center">
+          <div className="col-lg-6 col-md-12 ">
             <img
-              className="card-img-top mx-3  rounded-2"
+              className="card float-md-end float-sm-end shadow-lg rounded-2 img-fluid m-5 d-none d-sm-block"
               src={cardImage}
               alt=""
             />
           </div>
-          <div className="">
-            <h1 className="text-light fw-bold">{detail.title}</h1>
-            <p className="text-light fw-normal">{detail.overview}</p>
+          <div className="col-lg-6 ">
+            <h1 className="h1_tag text-light fw-bold">{title}</h1>
+
+            <p
+              className="p_tag text-light fw-normal1"
+              style={detailOverview ? {} : { color: "red" }}
+            >
+              {detailOverview || "Overview not available"}
+            </p>
           </div>
         </div>
       </div>

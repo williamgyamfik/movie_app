@@ -33,25 +33,11 @@ const SlideItem = ({ item }) => {
         objectFit: "fill",
       }}
     >
-      <div className="row  justify-content-center align-items-center mt-5 p-5">
-        <div className=" col-lg-12 col-md-11 col-sm-12 col-12 mt-5">
-          <div className=" mt-2 text-center d-flex flex-column align-items-center justify-content-center">
-            <h1 className="mb-3 text-white fw-bold fs-3">{title}</h1>
-            <p className=" text-white">{item.overview}</p>
-          </div>
+      <div className="row justify-content-center align-items-center mt-5 p-5">
+        <div className=" col-lg-8 col-md-12 col-sm-12 col-12 mt-3">
+          <h1 className="h1_tag mb-3 text-white fw-bold fs-3 ">{title}</h1>
+          <p className="  p_tag text-white text_height">{item.overview}</p>
         </div>
-        {/* <div className=" col-lg-3 col-md-5 col-12">
-          <div className="d-flex justify-content-center">
-            <div className="card text-bg-dark " style={{ width: "25rem" }}>
-              <img
-                src={imageCard}
-                className="card-img  rounded-4 "
-                alt="card image goes here"
-              />
-              <div className="card-img-overlay"></div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

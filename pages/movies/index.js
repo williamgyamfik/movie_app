@@ -2,6 +2,9 @@ import { useState } from "react";
 import tmdbApi from "../../api/tmdbApi";
 import { type } from "../../api/tmdbApi";
 import AllMovieList from "../../components/AllMovieList";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Movies = ({ movieLists }) => {
   const [movies, setMovies] = useState(movieLists);
@@ -23,19 +26,33 @@ const Movies = ({ movieLists }) => {
   };
 
   return (
-    <div className="container mb-5">
-      <h1 className="text-center text-light pt-5">Movies</h1>
-      <div className="row mt-5 p-3 ">
-        {movies.map((movieList) => {
-          return <AllMovieList key={movieList.id} movieList={movieList} />;
-        })}
-      </div>
-      <div className="d-flex justify-content-center mt-5">
-        <button className="btn btn-success" onClick={fetchMovies}>
-          View more...
+    <>
+      <Link href={"/home"}>
+        <button className="btn btn-success btn-sm mt-3">
+          <FontAwesomeIcon icon={faChevronLeft}>Back</FontAwesomeIcon>
         </button>
+      </Link>
+      <div className="container mb-5">
+        <h1 className="text-center text-light pt-5">Movies</h1>
+        <div className="row mt-5 p-3 ">
+          {movies.map((movieList) => {
+            const href = "/movies/" + movieList.id + "?category=movie";
+            return (
+              <AllMovieList
+                key={movieList.id}
+                movieList={movieList}
+                href={href}
+              />
+            );
+          })}
+        </div>
+        <div className="d-flex justify-content-center mt-5">
+          <button className="btn btn-success" onClick={fetchMovies}>
+            View more...
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -24,7 +24,7 @@ const MainNavigation = () => {
             className="navbar-brand d-flex justify-content-center align-items-center "
             href="/home"
           >
-            <Image className="movieLogo" src={movieLogo} alt="" />{" "}
+            <Image className="movieLogo" src={movieLogo} alt="" />
             <span className="text-danger fw-bold fs-3 p-1">Kino</span>
           </Link>
 

@@ -20,8 +20,8 @@ const Gallery = (props) => {
 
   return (
     <div className="container">
-      <h1 className="fw-bold text-white p-2">Gallery</h1>
-      <div className="row">
+      <h1 className="fw-bold text-white p-3">Gallery</h1>
+      <div className="row mb-5">
         <div
           id="carouselExampleFade"
           className="carousel slide carousel-fade"
@@ -30,7 +30,7 @@ const Gallery = (props) => {
           <div className="carousel-inner">
             {galleries.map((gallery, i) => {
               return (
-                <div className="carousel-item active" key={i}>
+                <div className="carousel-item active p-3" key={i}>
                   <img
                     src={movieBackDrop.originalImage(gallery.file_path)}
                     className="d-block w-100"

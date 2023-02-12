@@ -5,11 +5,7 @@ const CardDetail = () => {
   const router = useRouter();
   const id = router.query.movieId;
 
-  return (
-    <>
-      <Details id={id} />
-    </>
-  );
+  return <Details id={id} />;
 };
 
 export default CardDetail;

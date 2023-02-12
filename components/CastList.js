@@ -27,8 +27,8 @@ const CastList = (props) => {
     castList();
   }, [props.cat, props.id]);
   return (
-    <div className="container">
-      <h1 className="fw-bold text-white ">Casts</h1>
+    <div className="container mt-5">
+      <h1 className="fw-bold text-white p-3">Casts</h1>
       <div className="row align-items-center p-3">
         {casts?.map((cast) => {
           const cardImage = movieBackDrop.imageW300(
