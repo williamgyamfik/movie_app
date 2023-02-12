@@ -12,7 +12,7 @@ const Footer = () => {
     <div>
       <div className="container-fluid  bg-transparent ">
         <footer className="text-center text-lg-start">
-          <div className="container d-flex justify-content-center py-5">
+          <div className="container d-flex justify-content-center py-1">
             <button
               type="button"
               className="btn btn-primary btn-lg btn-floating mx-2"
@@ -41,7 +41,7 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div className="text-center text-white mb-3 p-3">
+          <div className="text-center text-white  p-3">
             <h4>Kino </h4>
             <p>
               Made with
