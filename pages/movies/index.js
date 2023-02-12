@@ -28,13 +28,13 @@ const Movies = ({ movieLists }) => {
   return (
     <>
       <Link href={"/home"}>
-        <button className="btn btn-success btn-sm mt-3">
+        <button className="btn btn-success btn-sm mt-3 mx-3">
           <FontAwesomeIcon icon={faChevronLeft}>Back</FontAwesomeIcon>
         </button>
       </Link>
       <div className="container mb-5">
-        <h1 className="text-center text-light pt-5">Movies</h1>
-        <div className="row mt-5 p-3 ">
+        <h1 className="text-center text-light ">Movies</h1>
+        <div className="row mt-5 p-3 gy-5">
           {movies.map((movieList) => {
             const href = "/movies/" + movieList.id + "?category=movie";
             return (

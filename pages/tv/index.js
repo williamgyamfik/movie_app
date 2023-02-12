@@ -29,14 +29,14 @@ const TvShows = ({ tvLists }) => {
   return (
     <>
       <Link href={"/home"}>
-        <button className="btn btn-success btn-sm mt-3">
+        <button className="btn btn-success btn-sm mt-3 mx-3">
           <FontAwesomeIcon icon={faChevronLeft}>Back</FontAwesomeIcon>
         </button>
       </Link>
 
       <div className="container mb-5">
-        <h1 className="text-center text-light pt-5">Tv Shows</h1>
-        <div className="row mt-5 p-3 ">
+        <h1 className="text-center text-light">Tv Shows</h1>
+        <div className="row mt-5 p-3 gy-5">
           {tv?.map((tvs) => {
             const href = "/tv/" + tvs.id + "?category=tv";
             return <AllTvshowsList key={tvs.id} tvs={tvs} href={href} />;
