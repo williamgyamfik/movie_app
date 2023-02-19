@@ -33,6 +33,10 @@ const tmdbApi = {
     const url = category[cat] + "/" + id + "/images?" + "api_key=" + api_key;
     return axiosTmdbApi.get(url);
   },
+  getMovies: (cat, id) => {
+    const url = category[cat] + id + "videos";
+    return axiosTmdbApi.get(url);
+  },
 };
 
 export default tmdbApi;

@@ -32,6 +32,7 @@ const Movies = ({ movieLists }) => {
           <FontAwesomeIcon icon={faChevronLeft}>Back</FontAwesomeIcon>
         </button>
       </Link>
+
       <div className="container mb-5">
         <h1 className="text-center text-light ">Movies</h1>
         <div className="row mt-5 p-3 gy-5">

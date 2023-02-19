@@ -9,54 +9,52 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="container-fluid  bg-transparent ">
-        <footer className="text-center text-lg-start">
-          <div className="container d-flex justify-content-center py-1">
+    <div className="container-fluid bg-transparent border-top ">
+      <footer className="text-center text-lg-start pt-5">
+        <div className="container d-flex justify-content-center py-1">
+          <button
+            type="button"
+            className="btn btn-primary btn-lg btn-floating mx-2"
+          >
+            <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
+          </button>
+          <button
+            type="button"
+            className="btn btn-danger btn-lg btn-floating mx-2"
+          >
+            <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary btn-lg btn-floating mx-2"
+          >
+            <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
+          </button>
+          <Link href="https://github.com/williamgyamfik">
             <button
               type="button"
-              className="btn btn-primary btn-lg btn-floating mx-2"
+              className="btn btn-light btn-lg btn-floating mx-2"
             >
-              <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
             </button>
-            <button
-              type="button"
-              className="btn btn-danger btn-lg btn-floating mx-2"
-            >
-              <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary btn-lg btn-floating mx-2"
-            >
-              <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
-            </button>
-            <Link href="https://github.com/williamgyamfik">
-              <button
-                type="button"
-                className="btn btn-light btn-lg btn-floating mx-2"
-              >
-                <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-              </button>
-            </Link>
-          </div>
+          </Link>
+        </div>
 
-          <div className="text-center text-white  p-3">
-            <h4>Kino </h4>
-            <p>
-              Made with
-              <span>
-                <FontAwesomeIcon
-                  style={{ color: "red" }}
-                  icon={faHeartCircleBolt}
-                  size="2x"
-                ></FontAwesomeIcon>
-              </span>
-              by dev William
-            </p>
-          </div>
-        </footer>
-      </div>
+        <div className="text-center text-white  p-3">
+          <h4>Kino </h4>
+          <p>
+            Made with
+            <span>
+              <FontAwesomeIcon
+                style={{ color: "red" }}
+                icon={faHeartCircleBolt}
+                size="2x"
+              ></FontAwesomeIcon>
+            </span>
+            by dev William
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

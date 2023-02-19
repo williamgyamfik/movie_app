@@ -9,7 +9,7 @@ const MovieCard = ({ item, href }) => {
   );
 
   return (
-    <div className="col-lg-2 col-md-4 col-sm-4 col-4 pb-5">
+    <div className="col-lg-2 col-md-4 col-sm-4 col-4 pb-5 ">
       <Link href={href}>
         <div className="justify-content-center d-flex">
           <div className="card text-bg-dark " style={{ width: "18rem" }}>

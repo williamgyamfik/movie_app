@@ -11,6 +11,8 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
+import Modal from "./Modal";
+
 const Details = (props) => {
   const router = useRouter();
 
@@ -32,6 +34,11 @@ const Details = (props) => {
     ? detail.overview
     : "Overview not available";
 
+  const rating = Number(detail.vote_average).toFixed(2);
+
+  const runtime = detail.last_episode_to_air;
+  console.log(runtime);
+
   useEffect(() => {
     const movieDetail = async () => {
       try {
@@ -43,6 +50,8 @@ const Details = (props) => {
     };
     movieDetail();
   }, [cat, props.id]);
+
+  console.log(detail);
 
   return (
     <>
@@ -72,18 +81,39 @@ const Details = (props) => {
               alt=""
             />
           </div>
-          <div className="col-lg-6 ">
+          <div className="col-lg-5 ">
             <h1 className="h1_tag text-light fw-bold">{title}</h1>
 
             <p
-              className="p_tag text-light fw-normal1"
+              className="p_tag text-light fw-normal"
               style={detailOverview ? {} : { color: "red" }}
             >
               {detailOverview || "Overview not available"}
             </p>
+            <p className="rating  text-light ">{rating}</p>
+
+            <p className=" text-light  lh-1">
+              Release date : {detail.release_date || detail.first_air_date}
+            </p>
+            <p className=" text-light  lh-1">
+              Last release date : {detail.last_air_date}
+            </p>
+
+            <p className=" text-light lh-1">
+              Spoken Language : {detail.original_language}
+            </p>
           </div>
+          <button
+            type="button"
+            className="btn btn-success fs-3 fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Watch trailer
+          </button>
         </div>
       </div>
+      <Modal />
       <CastList cat={cat} id={props.id} />
       <Gallery cat={cat} id={props.id} />
     </>

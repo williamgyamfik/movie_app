@@ -1,17 +1,11 @@
-import { category } from "../api/tmdbApi";
 import tmdbApi from "../api/tmdbApi";
 import { useEffect, useState } from "react";
 import movieBackDrop from "./movieBackDrop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 
-import { useRouter } from "next/router";
-
 const CastList = (props) => {
   const [casts, setCasts] = useState([]);
-
-  const router = useRouter();
-  console.log(router);
 
   useEffect(() => {
     const castList = async () => {
@@ -36,17 +30,15 @@ const CastList = (props) => {
           );
           return (
             <div
-              className=" col-lg-2 col-md-2 col-sm-3 col-6 text-center "
+              className=" col-lg-3 col-md-4 col-sm-4 col-6 text-center "
               key={cast.id}
             >
               <img
-                className="rounded-2 card-img-top"
+                className="rounded-5 card-img-top p-2 "
                 src={cardImage}
                 alt="cast image unavailable"
               />
-              <p className="fs-0 text-white">
-                {cast.name || cast.original_name}
-              </p>
+              <p className=" text-white">{cast.name || cast.original_name}</p>
             </div>
           );
         })}

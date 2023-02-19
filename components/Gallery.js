@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { category } from "../api/tmdbApi";
 import tmdbApi from "../api/tmdbApi";
 import movieBackDrop from "./movieBackDrop";
+
+import Image from "next/image";
 
 const Gallery = (props) => {
   const [galleries, setGalleries] = useState([]);
@@ -30,11 +31,13 @@ const Gallery = (props) => {
           <div className="carousel-inner">
             {galleries.map((gallery, i) => {
               return (
-                <div className="carousel-item active p-3" key={i}>
-                  <img
+                <div className="carousel-item active " key={i}>
+                  <Image
                     src={movieBackDrop.originalImage(gallery.file_path)}
-                    className="d-block w-100"
+                    className="d-block w-100 img-fluid "
                     alt="..."
+                    width="500"
+                    height="500"
                   />
                 </div>
               );
