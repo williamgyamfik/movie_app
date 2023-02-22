@@ -90,16 +90,16 @@ const Details = (props) => {
             >
               {detailOverview || "Overview not available"}
             </p>
-            <p className="rating  text-light ">{rating}</p>
+            <p className="rating movieInfo text-light ">{rating}</p>
 
-            <p className=" text-light  lh-1">
+            <p className=" text-light movieInfo lh-1">
               Release date : {detail.release_date || detail.first_air_date}
             </p>
-            <p className=" text-light  lh-1">
+            <p className=" text-light movieInfo  lh-1">
               Last release date : {detail.last_air_date}
             </p>
 
-            <p className=" text-light lh-1">
+            <p className=" text-light movieInfo lh-1">
               Spoken Language : {detail.original_language}
             </p>
           </div>

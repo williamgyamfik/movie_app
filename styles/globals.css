@@ -60,15 +60,12 @@ p {
   .rating{
     font-size: 0.5rem;
   }
-  .movieInfo > p{
-    line-height: 500px;
-    padding-bottom: 5px;
+  .movieInfo{
+    font-size: 15px;
     }
 }
 
-.no-overview {
-  background-color: #fa0101;
-}
+
 
 .rating {
   position: relative;

@@ -1,19 +1,14 @@
 import Link from "next/link";
 import movieLogo from "../../assets/movieLogo.png";
 import Image from "next/image";
-import { useState } from "react";
 
 import { useRouter } from "next/router";
 
 const MainNavigation = () => {
   const router = useRouter();
 
-  const [logout, setLogout] = useState(false);
   const logoutHandler = () => {
-    setLogout(true);
-    if (logout) {
-      router.push("/");
-    }
+    router.replace("/");
   };
 
   return (
