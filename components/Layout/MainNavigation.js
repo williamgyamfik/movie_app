@@ -1,15 +1,14 @@
 import Link from "next/link";
 import movieLogo from "../../assets/movieLogo.png";
 import Image from "next/image";
-
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const MainNavigation = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const logoutHandler = () => {
-    router.replace("/");
-  };
+  // const logoutHandler = () => {
+  //   router.replace("/");
+  // };
 
   return (
     <>
@@ -17,7 +16,7 @@ const MainNavigation = () => {
         <div className="container-fluid">
           <Link
             className="navbar-brand d-flex justify-content-center align-items-center "
-            href="/home"
+            href="/"
           >
             <Image className="movieLogo" src={movieLogo} alt="" />
             <span className="text-danger fw-bold fs-3 p-1">Kino</span>
@@ -70,12 +69,12 @@ const MainNavigation = () => {
           </div>
 
           <div className="me-4 d-flex justify-content-center">
-            <button
+            {/* <button
               className="btn btn-danger btn-sm rounded-3"
               onClick={logoutHandler}
             >
               logout
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>

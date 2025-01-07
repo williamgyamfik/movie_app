@@ -8,11 +8,11 @@ import Layout from "../components/Layout/Layout";
 import Footer from "../components/Layout/Footer";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
+  // const router = useRouter();
 
-  if (router.asPath == "/") {
-    return <Component {...pageProps} />;
-  }
+  // if (router.asPath == "/") {
+  //   return <Component {...pageProps} />;
+  // }
 
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.min.js");
